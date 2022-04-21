@@ -17,6 +17,15 @@ describe('Test para User', () => {
         expect(user.getBio).toBe('Bio')
         expect(user.dateCreated).not.toBeUndefined()
         expect(user.getlastUpdate).not.toBeUndefined()
+    })
+    test('Requerimiento 4: Agregando Setters', () => {
+        const user = new User(54,'Erika Machain','@erimach05','Bio')
 
+        user.setUsername = 'Kimberly M'
+        user.setBio = 'NuevaBio'
+
+        expect(user.username).toBe('Kimberly M')
+        expect(user.bio).toBe('NuevaBio')
+        
     })
 })
