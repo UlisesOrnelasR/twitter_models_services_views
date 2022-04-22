@@ -28,4 +28,18 @@ describe('Test para clase UserService',() =>{
         UserService.updateUserUsername(user, '@AngelesE')
         expect(user.username).toBe('@AngelesE')
     })
+
+    // Requerimiento 4: Agregar un nuevo método estático en `UserService` llamado `getAllUsernames`, 
+    // que recibirá una lista de objetos de la clase `User`, y regresará la lista de todos los usernames de dichos objetos. 
+    test('Requerimiento 4: nuevo método y regresa lista de los usernames', () => {
+        const user1 = UserService.create(14,'AngelesE','@FannyO')
+        const user2 = UserService.create(25,'ErikaM','@erimach05')
+        const user3 = UserService.create(5,'ErikaRo','@rea12')
+        const usernames = UserService.getAllUsernames([user1,user2,user3])
+        expect(usernames).toContain('@FannyO')
+        expect(usernames).toContain('@erimach05')
+        expect(usernames).toContain('@rea12')
+        
+    })
+
 })
