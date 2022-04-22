@@ -20,4 +20,12 @@ describe('Test para clase UserService',() =>{
         expect(userInfoList[2]).toBe('@FannyO')
         expect(userInfoList[3]).toBe('sin bio')
     })
+
+    // Requerimiento 3: Agregar un nuevo método estático en `UserService` llamado `updateUserUsername`,
+    // que reciba un objeto de la clase `User` y un nuevo string, que actualizará el valor de `username`. 
+    test('Requerimiento 3: updateUserUsername', () => {
+        const user = UserService.create(15,'AngelesE','@FannyO')
+        UserService.updateUserUsername(user, '@AngelesE')
+        expect(user.username).toBe('@AngelesE')
+    })
 })
