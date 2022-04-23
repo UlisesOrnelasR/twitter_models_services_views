@@ -18,6 +18,12 @@ describe('Pruebas para UserView',() => {
         const result = UserView.createUser(payload)
         expect(result.error).toMatch(/necesitan tener un valor valido/)
     })
-
+    // 3. Valida que un `payload` con algunas de las propiedades 
+    // necesarias regrese un objeto con la llave `error` indicando `necesitan tener un valor válido`.
+    test('Requerimiento 3:', () => {
+        const payload = {username: 'Username'}
+        const result = UserView.createUser(payload)
+        expect(result.error).toMatch(/necesitan tener un valor valido/)
+    })
 
 })
